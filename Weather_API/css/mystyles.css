@@ -1,0 +1,28 @@
+.blue{
+	background-color:blue;
+}
+
+.day{
+	background-image:url("http://res.cloudinary.com/dzwdnvi02/image/upload/v1459506887/141101101636-interstellar-iceland-4-horizontal-large-gallery_awap9o.jpg");
+    background-size:cover;
+}
+
+.night{
+	background-image:url("http://res.cloudinary.com/dzwdnvi02/image/upload/v1459506901/Interstellar_clpsph.jpg");
+     background-size:cover;
+}
+.centerblock{
+    
+	margin: 10px auto;
+	
+}
+
+.block{
+    opacity:0.8;
+	background-color:white;
+	width:450px;
+	height:300px;
+	border-radius: 10px;
+	padding:10px;
+	position:relative;
+}

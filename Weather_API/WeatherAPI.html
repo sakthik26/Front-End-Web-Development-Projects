@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Dancing+Script:700|Cantarell:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/mystyles.css" type="text/css">
+<title>Local Weather</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/script.js" type="text/javascript"></script>
+</head>
+
+<body class="night">
+
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12 text-center" style="margin-top:100px;font-family:Montserrat,sans-serif;"><h1> Current Weather Condition </h1></div>
+</div>
+
+<div class="centerblock block">
+<div id="weathercondition">
+<center><strong><div id="city"> city </div></strong></center>
+<hr> </hr>
+
+<div style="position:absolute; top:100px; left:60px; width:100px;height:100px" id="weathericon">  </div>
+<strong><div style="position:absolute; top:200px; left:65px; text-transform:uppercase" id= "description"> description </div></strong>
+
+<strong><div style="position: absolute; top: 100px; left: 230px" > Temp </div></strong>
+<div style="position: absolute; top: 117px; left: 230px" id="temp">  </div>
+<strong><div style="position:absolute; top:200px; left: 230px" > Hum </div></strong>
+<div style="position: absolute; top: 217px; left: 230px" id="hum">  </div>
+<strong><div style="position:absolute; top:130px; left: 350px" > Wind</div></strong>
+<div style="position: absolute; top: 147px; left: 350px" id="wind">  </div>
+
+
+<button style="position:absolute; left: 190px; bottom:-50px" type="button" class="btn btn-default metric"> Metric</button>
+
+</div></div>
+</div>
+
+</body>
+</html>
