@@ -6,8 +6,13 @@
 .block{
 	margin-left: 90px;
 	margin-right:90px;
-    padding:100px;
+    padding:50px;
 	background-color: 000000;
 	margin-bottom:50px;
 	
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
 }
