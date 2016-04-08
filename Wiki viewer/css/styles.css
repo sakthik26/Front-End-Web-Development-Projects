@@ -1,6 +1,13 @@
 #searchdiv{
 	background-color: #fffff7;
-	height: 100%;
 	opacity:0.7;
 }
 
+.block{
+	margin-left: 90px;
+	margin-right:90px;
+    padding:100px;
+	background-color: 000000;
+	margin-bottom:50px;
+	
+}
