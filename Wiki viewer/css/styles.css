@@ -9,10 +9,24 @@
     padding:50px;
 	background-color: 000000;
 	margin-bottom:50px;
+	color:#b6fbff;
+	font-size:20px;
 	
 }
 
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
+}
+
+.nilresult{
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	color:black;
+}
+
+#searchresults{
+	color:red;
 }
