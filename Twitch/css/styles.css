@@ -1,10 +1,25 @@
 .blackbg{
-	background-color: #ffd;
+	background-color: #000;
 	height:100%;
 	opacity:0.8;
 }
 
-.twitchalign{
+.twitchtitle{
 	padding-top: 40px;
 	font-size: 30px;
+	color:white;
+}
+
+.streambody{
+    margin-left:100px;
+    margin-right:100px;
+    padding:10px;
+	background-color: white;
+	
+}
+.streamers{
+	margin-left:50px;
+	margin-right:50px;
+	padding:20px;
+	background-color:black;
 }
