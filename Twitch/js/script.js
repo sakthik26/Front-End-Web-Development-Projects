@@ -1,5 +1,5 @@
 
-"use strict";
+
 $(function(){
 
    var streamers = ["freecodecamp",
@@ -39,14 +39,14 @@ $(function(){
 
 
      function success(streamersData){
-        alert("dfgdf");
         if(streamersData.stream === null){
+        var channelObj={};
         $.getJSON("https://api.twitch.tv/kraken/channels/"+channel+"?callback=?",function(channelData){
-        var channelObj = new StreamData(channelData);   
+        channelObj= new StreamData(channelData);   
         channelObj.channelStatus = "offline";
-        alert(JSON.stringify(channelObj));
+         insertStream(channelObj);
         }).fail(error);
-        insertStream(channelObj);
+       
        }
 
 
@@ -58,12 +58,19 @@ $(function(){
        else{
           var streamObj = new StreamData(streamersData);
           streamObj.channelStatus = "Online";
-          insertstream(streamObj);
-       }
+          insertStream(streamObj.streams[0].channel);
+       }   
+    }
 
+    }
     
+   function insertStream(obj){
+    
+     
+   $("#streambody").append("<div class=col-lg-4>"+"<div class=streamers>"+obj.channelName+"</div></div>");
+
     }
-    }
+  
    function error(){
           alert("The requested data is not available at the moment. Please try after sometime.");
      }
@@ -71,7 +78,7 @@ $(function(){
    streamers.forEach(getTwitchStatus);    
 
    
- })();
+ })
 
    
 
