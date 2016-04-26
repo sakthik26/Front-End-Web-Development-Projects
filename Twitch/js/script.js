@@ -9,7 +9,8 @@ $(function(){
                      "RobotCaleb",
                      "thomasballinger",
                      "noobs2ninjas",
-                     "beohoff"];
+                     "beohoff",
+                     "qazitv"];
    
   
    /* $.getJSON("https://api.twitch.tv/kraken/streams/comster404?callback=?",success);
@@ -22,17 +23,17 @@ $(function(){
     //constructing the api call to twitch.tv
     function getTwitchStatus(channel){
 
-    function buildUrl(type,channelName){
+    function buildUrl(channelName){
       $.getJSON("https://api.twitch.tv/kraken/streams/"+channelName+"?callback=?",success).fail(error);
     }
 
-     buildUrl("streams",channel);     
+     buildUrl(channel);     
     
     // populate the streamer data using constructor call
     function StreamData(channelData){
        this.channelName = channelData.name;       
        this.channelLang = channelData.language;
-       this.logo = channelData.logo;
+       this.logo = channelData.logo || "https://jpk-image-hosting.s3.amazonaws.com/twitch-app/no-image-available.jpg";
        this.url = channelData.url;
        this.followers = channelData.followers;
     }
@@ -56,9 +57,13 @@ $(function(){
       }
 
        else{
-          var streamObj = new StreamData(streamersData);
+          /*alert(JSON.stringify(streamersData));*/
+          var streamObj = new StreamData(streamersData.stream.channel);
           streamObj.channelStatus = "Online";
-          insertStream(streamObj.streams[0].channel);
+          
+         /* alert(JSON.stringify(streamersData.stream.channel));*/
+          insertStream(streamObj);
+          
        }   
     }
 
@@ -66,8 +71,8 @@ $(function(){
     
    function insertStream(obj){
     
-     
-   $("#streambody").append("<div class=col-lg-4>"+"<div class=streamers>"+obj.channelName+"</div></div>");
+   alert(JSON.stringify(obj));
+   $("#streambody").append("<div class=col-lg-4><div class=streamers><img src="+ obj.logo +" width=40 height=40></img><br/>"+obj.channelName+"</div></div>");
 
     }
   
