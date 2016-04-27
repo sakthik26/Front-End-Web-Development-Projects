@@ -10,7 +10,8 @@ $(function(){
                      "thomasballinger",
                      "noobs2ninjas",
                      "beohoff",
-                     "qazitv"];
+                     "qazitv",
+                     "comster404"];
    
   
    /* $.getJSON("https://api.twitch.tv/kraken/streams/comster404?callback=?",success);
@@ -52,7 +53,9 @@ $(function(){
 
 
        else if(streamersData.stream === undefined){
-           var accountBlocked = {status: "No Account Found"};
+           var accountBlocked = {"channelStatus": "No Account Found", 
+                                 "channelName": channel,
+                                 "logo": "https://jpk-image-hosting.s3.amazonaws.com/twitch-app/no-image-available.jpg"};
            insertStream(accountBlocked);
       }
 
@@ -70,18 +73,26 @@ $(function(){
     }
     
    function insertStream(obj){
-    
-   alert(JSON.stringify(obj));
-   $("#streambody").append("<div class=col-lg-4><div class=streamers><img src="+ obj.logo +" width=40 height=40></img><br/>"+obj.channelName+"</div></div>");
+    /*alert(JSON.stringify(obj));*/
+   if(obj.channelStatus !== 'No Account Found' ){
+   $("#streambody").append("<div class=col-lg-4><a href="+obj.url+"><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"Language:"+ obj.channelLang+"<br/>"+"Followers :"+obj.followers+"</div></div></div></a></div>");
+   
+   $("a").attr('target', '_blank');
+    } 
+    else {
+       alert("dfsdf");
+       $("#streambody").append("<div class=col-lg-4><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"</div></div></div></div>");
 
     }
-  
+    $("img").addClass("roundedcorner");
+   $("img").addClass("indentimg");
+  }
    function error(){
           alert("The requested data is not available at the moment. Please try after sometime.");
      }
     
    streamers.forEach(getTwitchStatus);    
-
+   
    
  })
 
