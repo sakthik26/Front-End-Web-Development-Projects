@@ -11,6 +11,7 @@ $(function(){
                      "noobs2ninjas",
                      "beohoff",
                      "qazitv",
+                     "asmongold",
                      "comster404"];
    
   
@@ -37,6 +38,7 @@ $(function(){
        this.logo = channelData.logo || "https://jpk-image-hosting.s3.amazonaws.com/twitch-app/no-image-available.jpg";
        this.url = channelData.url;
        this.followers = channelData.followers;
+       this.channelInfo = channelData.status || "";
     }
 
 
@@ -45,7 +47,7 @@ $(function(){
         var channelObj={};
         $.getJSON("https://api.twitch.tv/kraken/channels/"+channel+"?callback=?",function(channelData){
         channelObj= new StreamData(channelData);   
-        channelObj.channelStatus = "offline";
+        channelObj.channelStatus = "Offline";
          insertStream(channelObj);
         }).fail(error);
        
@@ -63,8 +65,6 @@ $(function(){
           /*alert(JSON.stringify(streamersData));*/
           var streamObj = new StreamData(streamersData.stream.channel);
           streamObj.channelStatus = "Online";
-          
-         /* alert(JSON.stringify(streamersData.stream.channel));*/
           insertStream(streamObj);
           
        }   
@@ -74,18 +74,24 @@ $(function(){
     
    function insertStream(obj){
     /*alert(JSON.stringify(obj));*/
-   if(obj.channelStatus !== 'No Account Found' ){
-   $("#streambody").append("<div class=col-lg-4><a href="+obj.url+"><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"Language:"+ obj.channelLang+"<br/>"+"Followers :"+obj.followers+"</div></div></div></a></div>");
-   
-   $("a").attr('target', '_blank');
+   if(obj.channelStatus === 'Offline' ){
+
+       $("#streambody").append("<div class=col-lg-4><a href="+obj.url+"><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"Language:"+ obj.channelLang+"<br/>"+"Followers :"+obj.followers+"</div></div></div></a></div>");
+       
+       $("a").attr('target', '_blank');
     } 
+    else if(obj.channelStatus === 'Online'){
+      $("#streambody").append("<div class=col-lg-4><a href="+obj.url+"><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+obj.channelInfo+"<br/>"+ obj.channelStatus +"<br/>"+"Language:"+ obj.channelLang+"<br/>"+"Followers :"+obj.followers+"</div></div></div></a></div>");
+   
+      $("a").attr('target', '_blank');
+    }
     else {
-       alert("dfsdf");
-       $("#streambody").append("<div class=col-lg-4><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"</div></div></div></div>");
+      
+      $("#streambody").append("<div class=col-lg-4><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"</div></div></div></div>");
 
     }
     $("img").addClass("roundedcorner");
-   $("img").addClass("indentimg");
+    $("img").addClass("indentimg");
   }
    function error(){
           alert("The requested data is not available at the moment. Please try after sometime.");
