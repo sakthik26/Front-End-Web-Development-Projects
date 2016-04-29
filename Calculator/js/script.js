@@ -1,107 +1,46 @@
-
-
 $(function(){
 
-   var streamers = ["freecodecamp",
-                     "storbeck", 
-                     "terakilobyte",
-                     "habathcx",
-                     "RobotCaleb",
-                     "thomasballinger",
-                     "noobs2ninjas",
-                     "beohoff",
-                     "qazitv",
-                     "asmongold",
-                     "comster404"];
-   
-  
-   /* $.getJSON("https://api.twitch.tv/kraken/streams/comster404?callback=?",success);
-  
+  // Implementing backspace 
+  $("#backspace").click(function handler(){
+     var screenContent = ($(".screen").text());
 
-   function success(data){
-    alert(JSON.stringify(data));
-    }*/
+     //extract everything except the last number
+     /*screenContent = screenContent/10;
+     screenContent = Math.floor(screenContent);*/
 
-    //constructing the api call to twitch.tv
-    function getTwitchStatus(channel){
+    /* screenContent = screenContent.split("").slice(0,screenContent.length-1).join("");*/
+      screenContent = screenContent.slice(0,-1);
+     
+     $(".screen").text(screenContent);
+     
+  })
 
-    function buildUrl(channelName){
-      $.getJSON("https://api.twitch.tv/kraken/streams/"+channelName+"?callback=?",success).fail(error);
-    }
+  // Clear screen
+  $("#clearscreen").click(function handler(){
+       $(".screen").text("");
+  })
 
-     buildUrl(channel);     
-    
-    // populate the streamer data using constructor call
-    function StreamData(channelData){
-       this.channelName = channelData.name;       
-       this.channelLang = channelData.language;
-       this.logo = channelData.logo || "https://jpk-image-hosting.s3.amazonaws.com/twitch-app/no-image-available.jpg";
-       this.url = channelData.url;
-       this.followers = channelData.followers;
-       this.channelInfo = channelData.status || "";
-    }
-
-
-     function success(streamersData){
-        if(streamersData.stream === null){
-        var channelObj={};
-        $.getJSON("https://api.twitch.tv/kraken/channels/"+channel+"?callback=?",function(channelData){
-        channelObj= new StreamData(channelData);   
-        channelObj.channelStatus = "Offline";
-         insertStream(channelObj);
-        }).fail(error);
-       
-       }
-
-
-       else if(streamersData.stream === undefined){
-           var accountBlocked = {"channelStatus": "No Account Found", 
-                                 "channelName": channel,
-                                 "logo": "https://jpk-image-hosting.s3.amazonaws.com/twitch-app/no-image-available.jpg"};
-           insertStream(accountBlocked);
-      }
-
-       else{
-          /*alert(JSON.stringify(streamersData));*/
-          var streamObj = new StreamData(streamersData.stream.channel);
-          streamObj.channelStatus = "Online";
-          insertStream(streamObj);
-          
-       }   
-    }
-
-    }
-    
-   function insertStream(obj){
-    /*alert(JSON.stringify(obj));*/
-   if(obj.channelStatus === 'Offline' ){
-
-       $("#streambody").append("<div class=col-lg-4><a href="+obj.url+"><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"Language:"+ obj.channelLang+"<br/>"+"Followers :"+obj.followers+"</div></div></div></a></div>");
-       
-       $("a").attr('target', '_blank');
-    } 
-    else if(obj.channelStatus === 'Online'){
-      $("#streambody").append("<div class=col-lg-4><a href="+obj.url+"><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+obj.channelInfo+"<br/>"+ obj.channelStatus +"<br/>"+"Language:"+ obj.channelLang+"<br/>"+"Followers :"+obj.followers+"</div></div></div></a></div>");
-   
-      $("a").attr('target', '_blank');
-    }
-    else {
+  //displaying contents on the screen
+  $(".key").click(function handler(){
+        var element =  $(this).text();
+       if( element !== 'AC'  &&  element !== 'CE' && element !== '='){
+        var element = $(this).text();
+        /*if(!isNaN(element))
+         element = Number(element);*/      
       
-      $("#streambody").append("<div class=col-lg-4><div class=streamers><img src="+ obj.logo +" width=70 height=70></img>"+"<div class=inlineblock><div class=indentcontent>"+obj.channelName.toUpperCase()+"</div><div style=position:relative;top:14px;>"+ obj.channelStatus +"<br/>"+"</div></div></div></div>");
-
-    }
-    $("img").addClass("roundedcorner");
-    $("img").addClass("indentimg");
-  }
-   function error(){
-          alert("The requested data is not available at the moment. Please try after sometime.");
-     }
-    
-   streamers.forEach(getTwitchStatus);    
-   
-   
- })
-
-   
+     $(".screen").append(element);}
+  })
 
 
+  //evaluate the contents
+  $("#result").click(function endResult(){
+     var resultOf = eval($(".screen").text());
+     $(".screen").text(resultOf);
+
+  })
+
+  
+
+
+
+})();
