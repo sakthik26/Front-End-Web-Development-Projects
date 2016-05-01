@@ -8,6 +8,17 @@ body{
 	margin-top:20px;
 }
 
+#dialog{
+	width:300px;
+	height:300px;
+	background-image: linear-gradient(to right, #5f2c82, #49a09d);
+	opacity: 0.8;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
 .box{
 
 	width:330px;
