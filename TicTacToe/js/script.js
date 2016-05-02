@@ -14,8 +14,4 @@ $(function(){
                   input = "O";
                }}]
    	        });
-
-      setTimeout(function(){alert(input)},5000);
-
-
 })();

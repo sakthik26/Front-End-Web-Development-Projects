@@ -6,6 +6,7 @@ body{
 	font-size: 30px;
 	text-align: center;
 	margin-top:20px;
+
 }
 
 #dialog{
@@ -35,6 +36,8 @@ body{
 	height:110px;
 	float:left;
 	background-color: #e4e4e4;
+	font-size: 100px;
+	text-align: center;
 }
 
 .tile:hover{
