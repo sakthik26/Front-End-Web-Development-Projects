@@ -1,5 +1,6 @@
 $(function(){
    var input ='';
+   var cInput ='';
    $("#dialog").dialog({
    	        dialogClass: "no-close",
    	        buttons:[
@@ -7,11 +8,14 @@ $(function(){
                  click : function(){
                   $(this).dialog("close");
                   input = "X";
+                  cInput = "O"
+
    	        	}},
    	        	{ text : "O",
                  click : function(){
                   $(this).dialog("close");
                   input = "O";
+                  cInput ="X"
                }}]
    	        });
 
@@ -25,8 +29,34 @@ $(function(){
    $(".tile").click(function(){
       $(this).text(input);
       userInput.push($(this).data('value'));
-      isItAWin("X");
+      isItAWin(input);
+      random = systemPlay();
+      computerInput.push(random);
+      alert(computerInput);
+     // computerInput.push(random);
+     $("div[data-value="+random+"]").text(cInput);
+      // Mark computer input
+      /*computerInput.forEach(function systemInput(val){
+        
+      })*/
+      /*isItAWin(cInput);*/
+
    })
+   var random;
+   var recursionValue;
+   //randomly picks the value
+   function systemPlay(){
+     
+   var random = Math.floor(Math.random()*9)+1;
+   
+   if(userInput.indexOf(random)>=0 || computerInput.indexOf(random)>=0)
+     recursionValue = systemPlay();
+     else
+      recursionValue = random;
+
+      return recursionValue;
+   
+   }
 
    function isItAWin(input){
          let c;
@@ -34,8 +64,8 @@ $(function(){
       for(var i=0;i<=7;i++){
           
            c=0;
-           if(userInput.every(function(val)
-            possibleWins[i].indexOf(val)>=0 && userInput.length >=3)
+           if(possibleWins[i].every(function(val)
+            userInput.indexOf(val)>=0 && userInput.length >=3)
          ){
             c++;
            }
