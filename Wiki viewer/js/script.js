@@ -7,6 +7,9 @@ $(function(){
 
 
 	$("#searchwiki").click(function(){
+
+       var objwin = window.open(location.href,'_self');
+       objwin.close();
        $("#searchresults").html("");
        var key= $("#search").val();
       /* alert("https://en.wikipedia.org/w/api.php?action=opensearch&search="+key+

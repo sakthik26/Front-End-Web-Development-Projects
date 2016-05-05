@@ -96,8 +96,10 @@ $(function(){
    function error(){
           alert("The requested data is not available at the moment. Please try after sometime.");
      }
-    
+   
+   
    streamers.forEach(getTwitchStatus);    
+
    
    
  })
