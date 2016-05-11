@@ -1,3 +1,7 @@
+body { 
+  font-family: 'Droid Sans', serif; 
+  font-size: 17px; 
+}
 .searchbar{
      
      padding:25px;
@@ -6,6 +10,7 @@
 
 }
 
+
 .sortdate{
 	
 	margin:10px;
@@ -13,18 +18,22 @@
     box-shadow: 0 10px 30px #000000;
     border: 1px solid #e3e3e3;
     display:block;
-    color: white;
+    color: #666666;
     float:right;
+
+}
+
+.time{
 
 }
 .airdate{
 
 	padding:10px;
-	margin-left:30px;
+	margin-left:50px;
 	background-color: transparent;
     color: black;
-    width:200px;
-   
+    width:400px;
+    border-bottom:50px solid #3A6073;
     
 }
 .overlay{
@@ -35,7 +44,7 @@
    padding:10px;
    background-color: black;
    border-radius:10px;
-   box-shadow: 0 10px 30px #000000;
+   
    border: 1px solid #e3e3e3;
    display:block;
    color: white;
