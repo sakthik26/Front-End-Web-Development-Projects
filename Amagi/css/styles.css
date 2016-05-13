@@ -2,25 +2,33 @@ body {
   font-family: 'Droid Sans', serif; 
   font-size: 17px; 
 }
+
+.displaynone{
+  display:none;
+  transition: all 0.2s ease-in-out;
+}
+
+.displayblock{
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
 .searchbar{
      
      padding:25px;
      background-color: black;
-     margin-bottom: 10px;
+     margin-bottom: 40px;
 
 }
 
 
 .sortdate{
 	
-	margin:10px;
     border-radius:10px;
     box-shadow: 0 10px 30px #000000;
     border: 1px solid #e3e3e3;
     display:block;
     color: #666666;
     float:right;
-
 }
 
 .time{
@@ -29,24 +37,24 @@ body {
 .airdate{
 
 	padding:10px;
-	margin-left:50px;
+	margin-right:30px;
+	margin-left: 30px;
 	background-color: transparent;
     color: black;
-    width:400px;
-    border-bottom:50px solid #3A6073;
+    margin-top: 50px;
     
 }
 .overlay{
    margin-left:30px;
-   margin-bottom:30px;
+   margin-bottom:10px;
    margin-right:20px;
-   margin-top : 20px;
+   margin-top : 30px;
    padding:10px;
    background-color: black;
    border-radius:10px;
    
    border: 1px solid #e3e3e3;
-   display:block;
+   
    color: white;
 
 }
