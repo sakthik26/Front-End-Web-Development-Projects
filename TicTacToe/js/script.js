@@ -22,7 +22,7 @@ $(function(){
 
    //  You go first everytime - inital assumption
     
-   //possible wins
+     //possible wins
    var possibleWins = [[1,2,3], [4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
    var userInput = [];
    var computerInput =[];
@@ -48,7 +48,25 @@ $(function(){
    var recursionValue;
    //randomly picks the value
    function systemPlay(){
-     
+     //Any two opponents input on the same line block
+     var count = 0;
+     var block=0;
+     for(var i=0;i<possibleWins.length;i++){
+      count = 0;
+      block =0;
+     possibleWins[i].forEach(function(val){
+       if(userInput.indexOf(val)>=0)
+         count++;
+       else if(userInput.indexOf(val)!== 0)
+         block = val;
+
+     })
+     //block
+     if(count==2 && computerInput.indexOf(block)<0){
+     return block; 
+     }
+    }
+
    var random = Math.floor(Math.random()*9)+1;
    
    if(userInput.indexOf(random)>=0 || computerInput.indexOf(random)>=0)
@@ -83,4 +101,4 @@ $(function(){
      }
    
 
-})();
+})
