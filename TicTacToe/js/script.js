@@ -48,6 +48,28 @@ $(function(){
    var recursionValue;
    //randomly picks the value
    function systemPlay(){
+
+     //When two of your inputs on line - win it
+      var win=0;
+      for(var i=0;i<possibleWins.length;i++){
+      count = 0;
+      win =0;
+     possibleWins[i].forEach(function(val){
+       if(computerInput.indexOf(val)>=0)
+         count++;
+       else if(computerInput.indexOf(val)!== 0)
+         win = val;
+
+     })
+     //win it
+     if(count==2 && computerInput.indexOf(win)<0 && userInput.indexOf(win)<0){
+     return win; 
+     }
+    }
+
+
+
+
      //Any two opponents input on the same line block
      var count = 0;
      var block=0;
@@ -66,7 +88,7 @@ $(function(){
      return block; 
      }
     }
-
+   
    var random = Math.floor(Math.random()*9)+1;
    
    if(userInput.indexOf(random)>=0 || computerInput.indexOf(random)>=0)
