@@ -13,13 +13,16 @@ $(function(){
    	        	}},
    	        	{ text : "O",
                  click : function(){
-                  $(this).dialog("close");
+                  
                   input = "O";
                   cInput ="X"
+                  computerStarts();
+                  $(this).dialog("close");
+
                }}]
    	        });
 
-
+    
    //  You go first everytime - inital assumption
     
      //possible wins
@@ -27,11 +30,20 @@ $(function(){
    var userInput = [];
    var computerInput =[];
    // Main logic resides here
+ function computerStarts(){
+   if(cInput === "X"){
+        $("div[data-value=5]").text(cInput);
+        computerInput.push(5);
+      }}
    $(".tile").click(function(){
-
+      
       $(this).text(input);
       userInput.push($(this).data('value'));
       isItAWin(userInput,input);
+      if(userInput.indexOf(5) <0 && userInput.length === 1 && computerInput.length === 0){
+        $("div[data-value=5]").text(cInput);
+        computerInput.push(5);
+      } else{
       random = systemPlay();
       computerInput.push(random);
       
@@ -41,7 +53,8 @@ $(function(){
       /*computerInput.forEach(function systemInput(val){
         
       })*/
-      isItAWin(computerInput,cInput);
+      isItAWin(computerInput,cInput); 
+    }
 
    })
    var random;
