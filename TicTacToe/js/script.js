@@ -101,6 +101,8 @@ $(function(){
      return block; 
      }
     }
+
+    //Block the fork created by the opponent
    
    var random = Math.floor(Math.random()*9)+1;
    
@@ -126,10 +128,12 @@ $(function(){
            }
                  
          if(c === 1){
-             if(arr == userInput)
+             if(arr == userInput){
             alert("Game over. you win");
+            window.location.reload();}
              else
-            alert("Game Over.Computer wins");
+            {alert("Game Over.Computer wins");
+          window.location.reload();}
            }
       }
       
