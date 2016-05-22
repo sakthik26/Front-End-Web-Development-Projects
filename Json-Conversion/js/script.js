@@ -1,6 +1,6 @@
 $(function(){
 
-	$.fn.serializeObject = function()
+	/*$.fn.serializeObject = function()
 {
     var o = {};
     var a = this.serializeArray();
@@ -22,7 +22,28 @@ $(function(){
       alert(json);
 	})
 
+  $("#add").click(function(){
+     
+  })
+*/
 
+function appendChildren() {
+  var allDivs = document.getElementsByTagName("div");
+  alert(allDivs.length);
+  for (var i = 0; i < allDivs.length; i++) {
+    var node = allDivs[i];
+    var newDiv = document.createElement("div");
+    decorateDiv(newDiv);
+    node.appendChild(newDiv);
+  }
+}
+
+// Mock of decorateDiv function for testing purposes
+function decorateDiv(div) {
+  div.innerHTML = "<span>Hello</span>";
+}
+
+appendChildren();
 
 	
 })

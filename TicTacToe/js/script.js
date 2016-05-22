@@ -36,9 +36,10 @@ $(function(){
         computerInput.push(5);
       }}
    $(".tile").click(function(){
-      
+
       $(this).text(input);
       userInput.push($(this).data('value'));
+      drawinstance();
       isItAWin(userInput,input);
       if(userInput.indexOf(5) <0 && userInput.length === 1 && computerInput.length === 0){
         $("div[data-value=5]").text(cInput);
@@ -49,11 +50,13 @@ $(function(){
       
      // computerInput.push(random);
      $("div[data-value="+random+"]").text(cInput);
+     drawinstance();
       // Mark computer input
       /*computerInput.forEach(function systemInput(val){
         
       })*/
       isItAWin(computerInput,cInput); 
+      
     }
 
    })
@@ -115,15 +118,20 @@ $(function(){
    
    }
 
+   function drawinstance(){
+    if(userInput.length==5 && computerInput.length==4 || computerInput.length==5 && userInput.length ==4){
+        alert("Its a draw");
+        window.location.reload();}
+   }
    function isItAWin(arr,input){
          let c;
 
       for(var i=0;i<=7;i++){
           
            c=0;
-           if(possibleWins[i].every(function(val)
-            arr.indexOf(val)>=0 && arr.length >=3)
-         ){
+           if(possibleWins[i].every(function(element){
+            arr.indexOf(element)>=0 && arr.length >=3}))
+           {
             c++;
            }
                  
