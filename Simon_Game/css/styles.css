@@ -2,3 +2,33 @@ body{
 	background-image: linear-gradient(to right, #5f2c82, #49a09d);
 }
 
+
+.bigger_circle{
+	width:500px;
+	height:500px;
+	border-radius: 250px;
+	margin : 80px auto;
+	background-color: white;
+	border: 30px solid black;
+}
+
+.smaller_circle{
+	width:200px;
+	height:200px;
+	border-radius: 100px;
+	background-color: white;
+	border: 20px solid black;
+	margin: -350px auto 0px auto;
+}
+
+.horizontal{
+	border: 10px solid black;
+	margin-top: 220px;
+}
+
+.vertical{
+	width: 0px;
+	height:440px;
+	border: 10px solid black;
+	margin-top: -260px
+}

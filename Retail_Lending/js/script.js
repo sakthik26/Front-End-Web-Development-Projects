@@ -10,22 +10,41 @@ $(function(){
   })
   
   var mainBlockNames = ["Personal Details","Property Details","Work Details","Other Details"]
+  var colorassignment = ["blue","green","red","yellow"];
+  
   $(".mainblock").click(function(){
+    var chosencss='';
+    var chosenmb = '';
     var mainBlockCopy = mainBlockNames.slice();
     var blockName = ($(this).children('div:first').text()).trim();
-    
+    if(blockName === "Personal Details"){
+     chosencss = "block_blue";
+     }
+   else if(blockName === "Property Details"){
+     chosencss= "block_green";
+    }
+   else if(blockName === "Work Details"){
+    chosencss = "block_red";
+    }
+  else 
+     {chosencss ="block_yellow";
+      }
+
+     colorassignment.splice(colorassignment.indexOf(chosencss.slice(6,chosencss.length)),1)
+     
+
     var index = mainBlockNames.indexOf(blockName);
     mainBlockCopy.splice(index,1);
 
-    $(".row").html("");
+    $(".new").html("");
     
-    $(".row").html("<div class='col-sm-4  col-md-4  col-lg-4  margin'>"+
-"<div class='mainblock' id='1'><div class='block'>"+ mainBlockCopy[0] +"</div> <div class='internalblock'><span class='backgroundblock'>Add Details</span></div></div><div class='mainblock margin' id='2'><div class='block'>"+ mainBlockCopy[1] +"</div> <div class='internalblock'><span class='backgroundblock'>Add Details</span></div></div><div class='mainblock margin' id='3'><div class='block'>"+ mainBlockCopy[2] +"</div> <div class='internalblock'><span class='backgroundblock'>Add Details</span></div></div></div>"+
-"<div class='col-sm-8 col-md-8 col-lg-8 margin'><div class='formblock'><div class='block'>"+ blockName +" </div>"+
+    $(".new").html("<div class='col-sm-4  col-md-4  col-lg-4  margin'>"+
+"<div class='mainblock' id='1'><div class='block_"+colorassignment[0]+"'>"+ mainBlockCopy[0] +"</div> <div class='internalblock'><span class='backgroundblock'>Add Details</span></div></div><div class='mainblock margin' id='2'><div class='block_"+colorassignment[1]+"'>"+ mainBlockCopy[1] +"</div> <div class='internalblock'><span class='backgroundblock'>Add Details</span></div></div><div class='mainblock margin' id='3'><div class='block_"+colorassignment[2]+"'>"+ mainBlockCopy[2] +"</div> <div class='internalblock'><span class='backgroundblock'>Add Details</span></div></div></div>"+
+"<div class='col-sm-8 col-md-8 col-lg-8 margin'><div class='formblock'><div class="+chosencss+">"+ blockName +" </div>"+
 "<form id='validateform' method='get' action=''><div class ='input-group'>"+
 "Name : <input type='text' id='name' class='form-control' minlength=4  required=true  name='name' placeholder ='Type full name'/></div>"+
 
-"<div class='input-group'>Gender: <input type='radio'  name ='gender' value='male' required='true'/> Male <input type='radio' name ='gender' value='female' required='true'/> Female</div>" +
+"<div class='input-group'>Gender: <br/><input type='radio'  name ='gender' value='male' required='true'/> Male <input type='radio' name ='gender' value='female' required='true'/> Female</div>" +
 
 "<div class ='input-group'>DOB: <input type='text' class='form-control' id='datepicker' name='dob' placeholder='Date' required='true'/></div>"+
 "<div class ='input-group'>"+
@@ -55,8 +74,14 @@ $(function(){
 
 
 $("body").on('input','#validateform',function(){
-  $("#validateform").validate();
+  $("#validateform").validate({
+    submitHandler:function(){
+      alert("successfully submitted");
+      return true;
+    }
+  });
 }) 
+
 
 /*$("body").on('submit',function(){
   $("#name").rules("add",{
