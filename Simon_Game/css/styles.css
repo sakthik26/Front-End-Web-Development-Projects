@@ -23,7 +23,7 @@ body{
 
 .horizontal{
 	border: 10px solid black;
-	margin-top: 220px;
+	margin-top: 200px;
 }
 
 .vertical{
@@ -31,4 +31,44 @@ body{
 	height:440px;
 	border: 10px solid black;
 	margin-top: -260px
+}
+
+.tl_square{
+	width:220px;
+	height:220px;
+	border:1px solid black;
+	float:left;
+	border-top-left-radius: 400px;
+	margin-top: -330px;
+
+}
+
+.tr_square{
+	width:220px;
+	height:220px;
+	border:1px solid black;
+	float:left;
+	border-top-right-radius: 190px;
+	margin-top: -330px;
+	margin-left: 220px;
+
+}
+
+.bl_square{
+	width:220px;
+	height:220px;
+	border:1px solid black;
+	float:left;
+	border-bottom-left-radius: 150px;
+	margin-top: -90px;
+}
+
+.br_square{
+	width:220px;
+	height:220px;
+	border:1px solid black;
+	float:left;
+	border-bottom-right-radius: 150px;
+	margin-top: -90px;
+
 }
