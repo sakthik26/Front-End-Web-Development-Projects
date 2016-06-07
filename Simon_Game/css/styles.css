@@ -12,13 +12,57 @@ body{
 	border: 30px solid black;
 }
 
+.firstsqr{
+	width:220px;
+	height:220px;
+	background-color: blue;
+	float:left;
+	border-right:10px solid black;
+	border-top-left-radius: 200px;
+	border-bottom:10px solid black;
+}
+
+.secondsqr{
+	width:220px;
+	height:220px;
+	background-color: blue;
+	float:left;
+	border-left:10px solid black;
+	border-top-right-radius: 200px;
+	border-bottom:10px solid black;
+}
+
+.thirdsqr{
+	width:220px;
+	height:220px;
+	background-color: blue;
+	float:left;
+	border-right:10px solid black;
+	border-bottom-left-radius: 200px;
+	border-top:10px solid black;
+
+}
+
+.fourthsqr{
+	width:220px;
+	height:220px;
+	background-color: blue;
+	float:left;
+	border-left:10px solid black;
+	border-bottom-right-radius: 200px;
+	border-top:10px solid black;
+}
+
 .smaller_circle{
-	width:200px;
-	height:200px;
-	border-radius: 100px;
+	width:240px;
+	height:240px;
+	border-radius: 120px;
 	background-color: white;
 	border: 20px solid black;
-	margin: -350px auto 0px auto;
+	position:absolute;
+	z-index: 10;
+	margin-top: 100px;
+	margin-left: 100px;
 }
 
 .horizontal{
