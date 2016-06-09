@@ -1,5 +1,26 @@
 body{
-	background-image: linear-gradient(to right, #5f2c82, #49a09d);
+	/*background-image: linear-gradient(to right, #5f2c82, #49a09d);*/
+}
+
+@media screen and (min-width: 500px){
+	body{
+		min-height: 500px;
+		
+	}
+}
+
+@media screen and (min-width: 600px){
+	body{
+		min-height: 600px;
+		background-color: red;
+	}
+}
+
+@media screen and (min-width: 700px){
+	body{
+		min-height: 700px;
+		background-color: red;
+	}
 }
 
 .bigger_circle{
@@ -11,6 +32,26 @@ body{
 	border: 30px solid black;
 }
 
+@media screen and (min-width: 500px){
+	.bigger_circle{
+		width: 400px;
+		height: 400px;
+	}
+}
+
+@media screen and (min-width: 600px){
+	.bigger_circle{
+		width: 450px;
+		height: 450px;
+	}
+}
+
+@media screen and (min-width: 700px){
+	.bigger_circle{
+		width: 500px;
+		height: 500px;
+	}
+}
 .firstsqr{
 	width:220px;
 	height:220px;
@@ -21,6 +62,26 @@ body{
 	border-bottom:10px solid black;
 }
 
+@media screen and (min-width: 500px) and (max-width: 600px){
+	.firstsqr{
+		width: 170px;
+		height: 170px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px){
+	.firstsqr{
+		width: 195px;
+		height: 195px;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px){
+	.firstsqr{
+		width: 220px;
+		height: 220px;
+	}
+} 
 .secondsqr{
 	width:220px;
 	height:220px;
@@ -31,6 +92,26 @@ body{
 	border-bottom:10px solid black;
 }
 
+@media screen and (min-width: 500px) and (max-width: 600px){
+	.secondsqr{
+		width: 170px;
+		height: 170px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px){
+	.secondsqr{
+		width: 195px;
+		height: 195px;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px){
+	.secondsqr{
+		width: 220px;
+		height: 220px;
+	}
+} 
 .thirdsqr{
 	width:220px;
 	height:220px;
@@ -41,7 +122,26 @@ body{
 	border-top:10px solid black;
 
 }
+@media screen and (min-width: 500px) and (max-width: 600px){
+	.thirdsqr{
+		width: 170px;
+		height: 170px;
+	}
+}
 
+@media screen and (min-width: 600px) and (max-width: 700px){
+	.thirdsqr{
+		width: 195px;
+		height: 195px;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px){
+	.thirdsqr{
+		width: 220px;
+		height: 220px;
+	}
+} 
 .fourthsqr{
 	width:220px;
 	height:220px;
@@ -51,7 +151,26 @@ body{
 	border-bottom-right-radius: 200px;
 	border-top:10px solid black;
 }
+@media screen and (min-width: 500px) and (max-width: 600px){
+	.fourthsqr{
+		width: 170px;
+		height: 170px;
+	}
+}
 
+@media screen and (min-width: 600px) and (max-width: 700px){
+	.fourthsqr{
+		width: 195px;
+		height: 195px;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px){
+	.fourthsqr{
+		width: 220px;
+		height: 220px;
+	}
+} 
 .smaller_circle{
 	width:240px;
 	height:240px;
