@@ -1,0 +1,8 @@
+<div class="col-sm-6 form-group">
+	<label class="control-label">{{field.label}}</label> 
+   	<select ng-model="newObject[field.model]" 
+   			ng-options="option.name for option in field.options" 
+   			class="form-control" 
+   			required/>
+</div>
+

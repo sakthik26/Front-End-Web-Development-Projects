@@ -56,7 +56,7 @@ html, body{
 .firstsqr{
 	width:220px;
 	height:220px;
-	background-color: blue;
+	background-color: green;
 	float:left;
 	border-right:10px solid black;
 	border-top-left-radius: 200px;
@@ -86,7 +86,7 @@ html, body{
 .secondsqr{
 	width:220px;
 	height:220px;
-	background-color: blue;
+	background-color: red;
 	float:left;
 	border-left:10px solid black;
 	border-top-right-radius: 200px;
@@ -146,7 +146,7 @@ html, body{
 .fourthsqr{
 	width:220px;
 	height:220px;
-	background-color: blue;
+	background-color: yellow;
 	float:left;
 	border-left:10px solid black;
 	border-bottom-right-radius: 200px;

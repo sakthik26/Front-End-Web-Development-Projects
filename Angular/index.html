@@ -1,0 +1,45 @@
+<html>
+<head>	
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="DynamicForm">
+<button ng-click="ShowValue()">value</button>
+<input type="text" ng-model="name" placeholder="enter name"/>
+<h1> {{ sessionDetailsForm.name }} </h1>
+<form name="myForm" ng-submit="getFormValues()">
+<div ng-repeat="field in formcontrols">
+<ng-form>
+<div ng-switch="field.fieldType">
+<div ng-switch-when="TEXT_FIELD">
+	<text-template></text-template>
+</div>
+<div ng-switch-when="select">
+         <select-template></select-template>
+	</div>
+<div ng-switch-when="TEXT_AREA">
+         <textarea-template></textarea-template>
+	</div>
+</div>
+<!-- <div ng-if="field.type == 'text'" class=" col-sm-6 form-group">
+  <text-template></text-template>
+</div>
+<div ng-if="field.type == 'select' " class=" col-sm-6 form-group">
+   <select-template></select-template>
+</div> -->
+</ng-form>
+
+</div>
+
+{{newObject}}
+{{jsoncheck}}
+<input type="submit" value ="submit"/>
+</form>
+
+</div>
+
+</body>
+</html>
