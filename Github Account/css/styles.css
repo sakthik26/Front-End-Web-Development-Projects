@@ -1,0 +1,122 @@
+body {
+  background-color: #f3f5eb;
+}
+
+.stream {
+  display: none;
+}
+form {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-bottom: 20px;
+}
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+}
+a {
+  &:focus, &:hover {
+    text-decoration: none;
+  }
+}
+
+.sort{
+	padding-bottom: 40px;
+}
+
+.location{
+	margin-left: 
+}
+
+.remove-link {
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+  position: absolute;
+  top: 1px;
+  right: 16px;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 200;
+  span {
+    color: #EC4401;
+    transition: color 0.2s ease-in-out;
+  }
+  &:hover, &:focus {
+    background-color: rgba(8,8,8,0.2);
+    span {
+      color: #a52f00;
+    }
+  }
+}
+
+.well {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  &:hover, &:focus {
+    .overlay {
+      opacity: 1;
+    }
+  }
+  .overlay {
+    background-color: rgba(255,255,255, 0.0);
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  .row {
+    display: table;
+    height: 100%;
+    width: 100%;
+    @media (max-width: 767px) {
+      display: block;
+      width: auto;
+    }
+  }
+  div[class^="col-"] {
+    display: table-cell;
+    vertical-align: middle; 
+    float: none;
+    @media (max-width: 767px) {
+      float: left;
+      display: block;
+      text-align: center;
+    }
+  }
+  img {
+    max-height: 100px;
+    border-radius: 50%;
+  }
+  h2 {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 160%;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 5px solid black;
+  }
+  h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 120%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    span {
+      display: block;
+      font-size: 80%;
+      margin-bottom: 5px;
+    }
+  }
+  p {
+    margin-bottom: 0;
+    span {
+      font-size: 80%;
+    }
+  }
+  

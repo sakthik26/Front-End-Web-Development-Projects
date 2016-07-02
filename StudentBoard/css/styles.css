@@ -1,0 +1,217 @@
+.landingstyle{
+	background: url('http://www.fg-a.com/wallpapers/geo-shapes-black-1280.jpg') no-repeat center center fixed;
+	background-size: cover;   
+	color:white; 
+	padding-bottom: 30px;
+}
+
+.indentlogo{
+	position: relative;
+	left:100px;
+	top:7px;
+}
+
+.fa.fa-chevron-down {
+    margin-left: 50%;
+}
+
+.landingstyle .indentlogo span{
+	position: relative;
+	top: -10px;
+	font-size: 20px;
+}
+
+.navigationbar{
+      margin-left:700px;
+      margin-top:-40px;
+
+}
+.navigationbar ul{
+	list-style: none;
+}
+
+.navigationbar ul li{
+	display: inline;
+	padding-right: 10px;
+}
+ul li a{
+	color:white;
+}
+
+
+a:hover, a:visited , a:link, a:active{
+	text-decoration: none
+}
+
+.landingstyle .name{
+  font-size: 50px;
+  margin-top: 120px;
+  margin-left: 140px;
+
+}
+
+.landingstyle .course{
+	font-size: 25px;
+	margin-top: 10px;
+	margin-left: 140px;
+}
+
+.landingstyle hr{
+	border: 1px solid yellow;
+	margin-left:140px;	
+
+}
+
+.landingstyle table{
+	margin-left: 140px;
+	padding-bottom: 200px;
+}
+
+.quotes{
+	font-size: 30px;
+	text-align: center;
+	padding-top: 30px;
+	font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
+.indent{
+	font-size: 30px;
+	 margin-left: 100px;	
+	font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
+.container{
+	width:1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container-fluid{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.cyellow{
+	color:yellow;
+}
+
+/*.content{
+	color: #48485e;
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;   
+    padding-left: 100px;
+}*/
+
+table tr td .content {
+	padding-left: 80px;
+    padding-right: 20px;
+    width: 50%;
+}
+
+table tr td .image {
+	padding-right: 80px;
+    width: 30%;
+}
+
+table tr td img{
+	height: 45%;
+    width: 100%;
+	
+}
+
+table tr td img.wide{
+    width: 100%;
+    height: 100%;
+	
+}
+
+
+.quotation{
+	font-size: 30px;
+	padding-left: 38px;
+	position:relative;
+	font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
+.quotation .quote.open{
+	display: inline-block;
+    font-size: 72px;
+    font-weight: 700;
+    height: 34px;
+    line-height: 1.1em;
+    position: absolute;
+    left:0px;
+}
+
+.quotation .quote.close{
+	display: inline-block;
+    font-size: 72px;
+    font-weight: 700;
+    height: 34px;
+    line-height: 1.1em;
+    position: absolute;
+}
+
+.viewcourse{
+	padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.bg-green {
+    background-color: #00c09d;
+}
+
+.bg-greenc{
+	color:#00c09d !important;
+}
+.text-white {
+    color: #fff !important;
+}
+
+table tr .connect{
+    margin-top: 0;
+}
+
+.footer{
+	color: #fff !important;
+	background-color: #48485e;
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
+    padding-bottom: 50px;
+}
+
+.btn{
+    background-color: #efff1d;
+    color: #48485e;
+}
+
+.email {
+    padding-left: 40px;
+    width: 40%;
+}
+
+.workshops {
+        text-transform: capitalize !important;
+}
+ul strong{
+       color: #00c09d !important;
+}
+
+.company {
+    padding-top: 30px;
+}
+
+ul li{
+	list-style: none;
+}
+
+.copyrights{
+	background-color: black;
+	color: white;
+	padding: 20px;
+}
+
+.container.qu {
+    background-color: #efeff6;
+}
