@@ -8,14 +8,25 @@ app.controller('TicketReservation',function($scope){
   $scope.selectedseats = [];
   $scope.allusers=[];
   $scope.reservedSeats =[];
+  $scope.table = false;
+  $scope.screen = false;
+   $scope.indicator = false;
   var temp ={}
   var i=0;
   $scope.submit = function(){
-   $scope.available = true;    
+   if($scope.reserve.name !== null && $scope.reserve.seats !==null && $scope.reserve.name !== undefined && $scope.reserve.seats !== undefined ){
+   $scope.indicator = true;
+   $scope.table = true;
+   $scope.available = true; 
+   $scope.screen = true;   
    if($scope.reserve.seats > (85 - $scope.reservedSeats.length)){
     alert((85 - $scope.reservedSeats.length) + " Seats available" )
     $scope.available = false;
-  }
+    }
+   }
+   else{
+    alert("enter user name and number of seats required")
+   }
   }
    
   function Temp(){
@@ -24,11 +35,13 @@ app.controller('TicketReservation',function($scope){
     this.name = "";
   } 
   $scope.showtables = function(){
+
      if($scope.selectedseats.length === $scope.reserve.seats){
+
      var tempObj = new Temp();
      tempObj.name = $scope.reserve.name;
      tempObj.totalSeats = $scope.reserve.seats;
-     tempObj.seatNumbers = $scope.selectedseats;
+     tempObj.seatNumbers = $scope.selectedseats.toString();
      $scope.selectedseats.forEach(function(element){
       $scope.reservedSeats.push(element);
      })
@@ -69,7 +82,9 @@ app.controller('TicketReservation',function($scope){
       $(this).addClass("red");
       $scope.selectedseats.push($(this).children().text().trim());
      }
-     
+     else if($scope.reserve.name === null  ||  $scope.reserve.seats === null){
+      alert("Enter the name and number of seats required.");
+     }
      else if($scope.selectedseats.length >= $scope.reserve.seats ){
      alert("Exceeding the number of seat selected");
    }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -16,25 +16,40 @@
 	<div class="container">
 	<div ng-controller="TicketReservation">
         <div class="row">
-       	  <div class="col-xs-12 text-center">
-       		<Strong> Ticket Reservation System </Strong>
-       	  </div>       	
+       	  <div class="col-xs-6 text-center top">
+       		<Strong class="white">Movie Ticket Reservation System </Strong>       	         	
           <form ng-submit="submit()">
-              <div class="col-xs-12 text-center name">
-              Name : <input type="text" ng-model="reserve['name']" placeholder="Enter your name" />
+              <div class="text-center name white">
+              Name : <input class="black" type="text" ng-model="reserve['name']" placeholder="Your name" />
              </div>
-             <div class="col-xs-12 text-center">
-              Seats: <input type="number" ng-model="reserve['seats']" placeholder="Enter number of seats" />
+             <div class="col-xs-12 text-center white">
+              Seats: <input class="black" type="number" ng-model="reserve['seats']" placeholder="Number of seats" />
              </div> 
              <div class="col-xs-12 text-center">
-             	<button type="submit" class="btn btn-default" value="submit"> Submit </button>
+             	<button type="submit" class="btn btn-default" value="submit"> Start Selecting! </button>
              </div>
-       	  </form>  
+       	  </form> 
+       	 </div>
+       	 <div class="Indicator" ng-show="indicator">
+       	 <div class="col-xs-1 top">
+       	 	<div class="seat red"></div> 
+       	 	<div class="seat green "></div> 
+       	 	<div class="seat "></div> 
+       	 </div> 
+       	 <div class="col-xs-2 top">
+            <div class="textadjust white">- Selected</div>
+            <div style="margin-top:35px" class="white">- Reserved</div>
+            <div style="margin-top:35px" class="white">- Empty</div>
+       	 </div>
+       	</div>
+       	  <div class="col-xs-12 text-center" ng-show="screen">
+       	  	<div class="screenblock black" > Screen </div>
+       	  </div> 
           <div class="col-xs-12 text-center" ng-show="available">
        	    <div class="seater">
        	 	   <div class="row">
        	 	     <div id="find" class="col-xs-12">
-	              <div  class="seat"><span>A1</span></div>
+	              <div  class="seat text-center"><span>A1</span></div>
 	              <div class="seat"><span>A2</span></div>
 	              <div class="seat"><span>A3</span></div>
 	              <div class="seat"><span>A4</span></div>
@@ -135,17 +150,17 @@
 	              <div class="seat"><span>F14</span></div>
 	              <div class="seat"><span>F15</span></div>
 	              <div class="seat"><span>F16</span></div>
-	              <div class="seat"><span>F17</span></div>
-	              
+	              <div class="seat"><span>F17</span></div>	              
        	 	   </div>
        	    </div>     
-       	     <button type="button" class="btn btn-default" ng-click="showtables()"> Confirm </button>
+       	     <button type="button" class="btn btn-default btn-primary" ng-click="showtables()"> Confirm </button>
           </div>
        </div>
-       <div class="table">
+       <div class="col-xs-8 col-xs-offset-2" ng-show="table">
+         <div class="table top">
        	      <table class="table table-striped table-bordered table-hover">
                         <thead>
-                            <tr >
+                            <tr class="text-center">
                                 <th>Name</th>
                                 <th>Number of seats</th>
                                 <th>Seat numbers</th>
@@ -158,10 +173,11 @@
                              <td>{{data.seatNumbers}}</td>
                             </tr>                           
                         </tbody>
-                    </table>
-       </div>
-   </div>
-</div>
+              </table>
+         </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
