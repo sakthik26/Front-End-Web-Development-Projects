@@ -1,0 +1,74 @@
+body{
+	/*background-image: url(../images/bg.jpg);*/
+	background-size: cover;
+}
+
+form div{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.seater{
+	background-color: black;
+	padding:30px;
+	min-width: 50px;
+	color:white;
+	margin:0 auto;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+
+.seat{
+	height: 20px;
+	width: 20px;
+	border-radius: 2px;
+	background-color: white;
+	color: black;
+	float:left;
+	padding: 20px;
+	margin:10px;
+	position: relative;
+}
+
+span{
+	position: absolute;
+	top:10px;
+	right:10px;
+}
+
+
+.red{
+	background-color: green;
+}
+
+.green{
+	background-color: red;
+}
+
+.top{
+	margin-top: 50px;
+}
+
+.screenblock{
+	min-height: 20px;
+	color:white;
+	background-color: lightblue;
+	margin:20px;
+}
+
+.btn{
+	margin-top: 10px;
+}
+
+.textadjust{
+	margin-top: 20px;
+}
+
+.white{
+	color: white;
+}
+
+.black{
+	color: black;
+}

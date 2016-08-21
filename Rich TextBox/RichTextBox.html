@@ -1,0 +1,24 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Dancing+Script:700|Cantarell:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/mystyles.css" type="text/css">
+<title>Rich Text Box</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/script.js" type="text/javascript"></script>
+</head>
+<body ng-app="richtextbox">
+	<div class="container">
+	   <div ng-controller="ConvertController">
+         <input type="text" ng-model="textvalue"/> 
+         <emoji  convert="op({':)' : 'https://s3-us-west-1.amazonaws.com/dboskovic/jquery-emojiarea-master/packs/basic/smile.png'})"> </emoji>
+       </div>
+    </div>
+
+</body>
+</html>
