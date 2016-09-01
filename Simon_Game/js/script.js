@@ -8,19 +8,28 @@ $(function(){
   
 
     function startSimon(){
+      var dashboard = document.getElementsByClassName('blackbox');
+
       start[0].style.display = 'none';
-      reset[0].style.display = 'block';
-     /*start[0].className = 'reset';*/
-     /*var node = action[0].firstChild;
-     node.style.display = 'none';
-     var resetButton = document.createElement("button");
-     var resetText = document.createTextNode('Reset');
-     resetButton.appendChild(resetText);
-     var resetDiv = document.createElement("div");
-     resetDiv.appendChild(resetButton)
-     action[0].appendChild(resetDiv);*/
-     
+      reset[0].style.display = 'block';     
+
+      //changing the display portion
+      var begin = setTimeout(begin,1000);
+
+
+      /*dashboard[0].innerHTML = "Round - 1";*/
+      
+	  function begin(){
+	      dashboard[0].innerHTML = "GET READY"
+	      clearTimeout(begin);
+          
+
+      //Make it common for all the rounds
+	      setTimeout(function(){dashboard[0].innerHTML = "Round-1"},400);
+	  }
     }
+
+    
     
 
 })
