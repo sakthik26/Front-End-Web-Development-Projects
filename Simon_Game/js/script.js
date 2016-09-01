@@ -1,4 +1,4 @@
-$(function(){
+
 
     var start = document.getElementsByClassName('start');
     var reset = document.getElementsByClassName('reset');
@@ -25,11 +25,10 @@ $(function(){
           
 
       //Make it common for all the rounds
-	      setTimeout(function(){dashboard[0].innerHTML = "Round-1"},400);
-	  }
-    }
-
-    
-    
-
-})
+          for(i=1;i<=5;i++){
+	          	(function(index){
+	          		setTimeout(function(){dashboard[0].innerHTML= "Round-"+index},index*1000)
+	          	})(i);
+	      }
+      }
+    }   
