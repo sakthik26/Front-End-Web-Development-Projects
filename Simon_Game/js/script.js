@@ -2,17 +2,33 @@
 
     var start = document.getElementsByClassName('start');
     var reset = document.getElementsByClassName('reset');
+    var green = document.getElementById('green');
+    var red = document.getElementById('red');
+    var blue = document.getElementById('blue');
+    var yellow = document.getElementById('yellow');
     reset[0].style.display = 'none';
     start[0].addEventListener("click",startSimon);
     
-    document.getElementById('green').onclick = play;
 
+    green.addEventListener('click',function(){
+    	var audio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
+    	audio.play();
+    })
 
+    red.addEventListener('click',function(){
+    	var audio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
+    	audio.play();
+    })
 
-    function play(){
-    	    var audio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-    	    audio.play();
-    }
+    blue.addEventListener('click',function(){
+    	var audio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
+    	audio.play();
+    })
+
+    yellow.addEventListener('click',function(){
+    	var audio = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
+    	audio.play();
+    })
 
 
     function startSimon(){
