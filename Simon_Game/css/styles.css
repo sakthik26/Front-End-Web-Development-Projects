@@ -63,6 +63,12 @@ html, body{
 	border-bottom:10px solid black;
 }
 
+.firstsqr:active{
+	background-color: lightgreen;
+}
+
+
+
 @media screen and (min-width: 100px) and (max-width: 599px){
 	.firstsqr{
 		width: 170px;
@@ -91,6 +97,10 @@ html, body{
 	border-left:10px solid black;
 	border-top-right-radius: 200px;
 	border-bottom:10px solid black;
+}
+
+.secondsqr:active{
+	background-color: RGB(239, 61, 71);
 }
 
 @media screen and (min-width: 100px) and (max-width: 599px){
@@ -123,6 +133,10 @@ html, body{
 	border-top:10px solid black;
 
 }
+
+.thirdsqr:active{
+	background-color: lightblue;
+}
 @media screen and (min-width: 100px) and (max-width: 599px){
 	.thirdsqr{
 		width: 170px;
@@ -151,6 +165,11 @@ html, body{
 	border-left:10px solid black;
 	border-bottom-right-radius: 200px;
 	border-top:10px solid black;
+}
+
+.fourthsqr:active{
+  
+    background-color: RGB(255,255,224);
 }
 @media screen and (min-width: 100px) and (max-width: 599px){
 	.fourthsqr{
