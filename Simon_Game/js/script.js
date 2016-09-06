@@ -51,7 +51,7 @@
       //Make it common for all the rounds
           for(i=1;i<=20;i++){
 	          	(function(index){
-	          		setTimeout(function(){dashboard[0].innerHTML= "Round-"+index},index*1000)
+	          		setTimeout(function(){dashboard[0].innerHTML= "Roun-"+index},index*1000)
 	          	})(i);
 	      }
       }
