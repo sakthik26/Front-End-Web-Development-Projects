@@ -1,13 +1,13 @@
 
 
-    var start = document.getElementsByClassName('start');
-    var reset = document.getElementsByClassName('reset');
+    var start = document.querySelector('.start');
+    var reset = document.querySelector('.reset');
     var green = document.getElementById('green');
     var red = document.getElementById('red');
     var blue = document.getElementById('blue');
     var yellow = document.getElementById('yellow');
-    reset[0].style.display = 'none';
-    start[0].addEventListener("click",startSimon);
+    reset.style.display = 'none';
+    start.addEventListener("click",startSimon);
     
 
     green.addEventListener('click',function(){
@@ -32,10 +32,10 @@
 
 
     function startSimon(){
-      var dashboard = document.getElementsByClassName('blackbox');
+      var dashboard = document.querySelector('.blackbox');
 
-      start[0].style.display = 'none';
-      reset[0].style.display = 'block';     
+      start.style.display = 'none';
+      reset.style.display = 'block';     
 
       //changing the display portion
       var begin = setTimeout(begin,1000);
@@ -44,14 +44,14 @@
       /*dashboard[0].innerHTML = "Round - 1";*/
       
 	  function begin(){
-	      dashboard[0].innerHTML = "GET READY"
+	      dashboard.innerHTML = "GET READY"
 	      clearTimeout(begin);
           
 
       //Make it common for all the rounds
           for(i=1;i<=20;i++){
 	          	(function(index){
-	          		setTimeout(function(){dashboard[0].innerHTML= "Round-"+index},index*1000)
+	          		setTimeout(function(){dashboard.innerHTML= "Round-"+index},index*1000)
 	          	})(i);
 	      }
       }
