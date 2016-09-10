@@ -6,6 +6,12 @@
     var red = document.getElementById('red');
     var blue = document.getElementById('blue');
     var yellow = document.getElementById('yellow');
+    var computerInput = [];
+    var userInput = [];
+    var computClickEvent = [green,red,blue,yellow];
+    var computClickColorRestore = ["green","red","blue","yellow"];
+    var computClickColor = ["light-green","RGB(239, 61, 71)","lightblue","RGB(255,255,224)"]
+
     reset.style.display = 'none';
     start.addEventListener("click",startSimon);
     
@@ -41,18 +47,33 @@
       var begin = setTimeout(begin,1000);
 
 
-      /*dashboard[0].innerHTML = "Round - 1";*/
       
+    //Main logic resides here
 	  function begin(){
 	      dashboard.innerHTML = "GET READY"
-	      clearTimeout(begin);
-          
+        
+        var rand = Math.floor(Math.random()*(4));
+        computerInput.push(rand);
+        computClickEvent[rand].style.background = computClickColor[rand];
+        computClickEvent[rand].click();
+
+        setTimeout(function(){computClickEvent[rand].style.background = computClickColorRestore[rand]},500);
+        
+
+
+        
+
+	     /* clearTimeout(begin);*/
+         
+
+
+
 
       //Make it common for all the rounds
-          for(i=1;i<=20;i++){
+          /*for(i=1;i<=20;i++){
 	          	(function(index){
 	          		setTimeout(function(){dashboard.innerHTML= "Round-"+index},index*1000)
 	          	})(i);
-	      }
+	      }*/
       }
     }   
