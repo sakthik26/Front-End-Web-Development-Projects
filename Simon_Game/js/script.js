@@ -6,7 +6,7 @@
     var red = document.getElementById('red');
     var blue = document.getElementById('blue');
     var yellow = document.getElementById('yellow');
-    var computerInput = [];
+    var computerInput = [0,1,2];
     var userInput = [];
     var computClickEvent = [green,red,blue,yellow];
     var computClickColorRestore = ["green","red","blue","yellow"];
@@ -52,14 +52,22 @@
 	  function begin(){
 	      dashboard.innerHTML = "GET READY"
         
+
         var rand = Math.floor(Math.random()*(4));
         computerInput.push(rand);
-        computClickEvent[rand].style.background = computClickColor[rand];
-        computClickEvent[rand].click();
-
-        setTimeout(function(){computClickEvent[rand].style.background = computClickColorRestore[rand]},500);
         
+        computerInput.forEach(function(element){
+          setTimeout(function(){
+          computClickEvent[element].style.background = computClickColor[element];
+          computClickEvent[element].click();
 
+          computClickEvent[element].style.background = computClickColorRestore[element]},1000);
+        })
+
+          
+
+       
+        
 
         
 
@@ -70,10 +78,10 @@
 
 
       //Make it common for all the rounds
-          /*for(i=1;i<=20;i++){
+          for(i=1;i<=20;i++){
 	          	(function(index){
 	          		setTimeout(function(){dashboard.innerHTML= "Round-"+index},index*1000)
 	          	})(i);
-	      }*/
+	      }
       }
     }   
