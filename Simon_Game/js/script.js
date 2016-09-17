@@ -6,11 +6,11 @@
     var red = document.getElementById('red');
     var blue = document.getElementById('blue');
     var yellow = document.getElementById('yellow');
-    var computerInput = [0,1,2];
+    var computerInput = [];
     var userInput = [];
     var computClickEvent = [green,red,blue,yellow];
     var computClickColorRestore = ["green","red","blue","yellow"];
-    var computClickColor = ["light-green","RGB(239, 61, 71)","lightblue","RGB(255,255,224)"]
+    var computClickColor = ["lightgreen","RGB(239, 61, 71)","pink","RGB(255,255,224)"]
 
     reset.style.display = 'none';
     start.addEventListener("click",startSimon);
@@ -52,17 +52,22 @@
 	  function begin(){
 	      dashboard.innerHTML = "GET READY"
         
-
-        var rand = Math.floor(Math.random()*(4));
-        computerInput.push(rand);
-        
-        computerInput.forEach(function(element){
-          setTimeout(function(){
-          computClickEvent[element].style.background = computClickColor[element];
-          computClickEvent[element].click();
-
-          computClickEvent[element].style.background = computClickColorRestore[element]},1000);
-        })
+         for(i=0;i<3;i++){
+           (function(index){
+            var rand = Math.floor(Math.random()*(4));
+            computerInput.push(rand);
+            
+            computerInput.forEach(function(element){
+              setTimeout(function(){
+                computClickEvent[element].style.background = computClickColor[element];
+                computClickEvent[element].click()
+                setTimeout(function(){
+                computClickEvent[element].style.background = computClickColorRestore[element]
+                },1500);
+              },1000);            
+            })
+         })(i)
+        } 
 
           
 
@@ -78,10 +83,10 @@
 
 
       //Make it common for all the rounds
-          for(i=1;i<=20;i++){
+         /* for(i=1;i<=20;i++){
 	          	(function(index){
 	          		setTimeout(function(){dashboard.innerHTML= "Round-"+index},index*1000)
 	          	})(i);
-	      }
+	      }*/
       }
     }   
