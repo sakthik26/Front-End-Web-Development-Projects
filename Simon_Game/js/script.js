@@ -52,21 +52,22 @@
 	  function begin(){
 	      dashboard.innerHTML = "GET READY"
         
-       
-           
+         for(i=0;i<3;i++){
+           (function(index){
             var rand = Math.floor(Math.random()*(4));
             computerInput.push(rand);
             
             computerInput.forEach(function(element){
               setTimeout(function(){
                 computClickEvent[element].style.background = computClickColor[element];
-                computClickEvent[element].click();
-              },1000);            
+                computClickEvent[element].click()
+              },i*1000);   
               setTimeout(function(){
-                computClickEvent[element].style.background = computClickColorRestore[element]
-              },1500);
+                computClickEvent[element].style.background = computClickColorRestore[element];
+              },i*1500);      
             })
-        
+         })(i)
+       }
         
 
           
